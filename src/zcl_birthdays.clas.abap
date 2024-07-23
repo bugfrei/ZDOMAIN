@@ -1,0 +1,27 @@
+CLASS zcl_birthdays DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+  DATA ITEM TYPE zbirthdays.
+
+  METHODS CONSTRUCTOR
+    IMPORTING
+      !id TYPE raw16.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_birthdays IMPLEMENTATION.
+
+  METHOD constructor.
+    SELECT SINGLE * FROM zbirthdays
+      WHERE id = @id
+      INTO @ITEM.
+  ENDMETHOD.
+
+ENDCLASS.

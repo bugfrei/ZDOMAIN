@@ -1,0 +1,19 @@
+CLASS zcl_subclass DEFINITION INHERITING FROM ZCL_BASECLASS
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+  METHODS: test1 REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_subclass IMPLEMENTATION.
+  METHOD test1.
+    out->write( |Ausgabe von test1 der Subklasse (Überschriebene Methode test1| ).
+  ENDMETHOD.
+
+ENDCLASS.
